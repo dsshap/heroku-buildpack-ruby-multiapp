@@ -7,8 +7,8 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
   # @return [Boolean] true if it's a Rails 3.x app
   def self.use?
     super &&
-      File.exists?("#{ENV["APP_NAME"]}_config/application.rb") &&
-      File.read("#{ENV["APP_NAME"]}_config/application.rb") =~ /Rails::Application/
+      File.exists?("#{ENV["APP_NAME"]}/config/application.rb") &&
+      File.read("#{ENV["APP_NAME"]}/config/application.rb") =~ /Rails::Application/
   end
 
   def name
