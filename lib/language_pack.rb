@@ -9,8 +9,6 @@ module LanguagePack
   def self.detect(*args)
     Dir.chdir(args.first)
 
-    puts args.first
-
     pack = [ Rails3, Rails2, Rack, Ruby ].detect do |klass|
       klass.use?
     end
