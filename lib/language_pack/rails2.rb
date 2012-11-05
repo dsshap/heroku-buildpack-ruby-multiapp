@@ -8,7 +8,7 @@ class LanguagePack::Rails2 < LanguagePack::Ruby
   # detects if this is a valid Rails 2 app
   # @return [Boolean] true if it's a Rails 2 app
   def self.use?
-    super && File.exist?("config/environment.rb")
+    super && File.exist?("#{ENV["APP_NAME"]}_config/environment.rb")
   end
 
   def name
