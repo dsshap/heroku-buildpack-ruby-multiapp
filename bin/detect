@@ -5,10 +5,10 @@ require "language_pack"
 
 exit 0
 
-if pack = LanguagePack.detect(ARGV.first)
-  puts pack.name
-  exit 0
-else
-  puts "no"
-  exit 1
-end
+# if pack = LanguagePack.detect(ARGV.first)
+#   puts pack.name
+#   exit 0
+# else
+#   puts "no"
+#   exit 1
+# end
