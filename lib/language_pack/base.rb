@@ -62,21 +62,14 @@ class LanguagePack::Base
   # collection of values passed for a release
   # @return [String] in YAML format of the result
   def release
-    puts "in release"
-
     setup_language_pack_environment
 
-    puts "before yml"
-
-    yml = {
-      "addons" => default_addons,
-      "config_vars" => default_config_vars,
-      "default_process_types" => default_process_types
+    {
+      "addons" => default_addons
+      #,
+      # "config_vars" => default_config_vars,
+      # "default_process_types" => default_process_types
     }.to_yaml
-
-    puts "yaml: #{yml}"
-
-    yml
   end
 
   # log output
