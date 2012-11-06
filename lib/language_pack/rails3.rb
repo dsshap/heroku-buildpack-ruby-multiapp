@@ -12,7 +12,7 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
   end
 
   def name
-    "Ruby/Rails"+" "+ENV["APP_NAME"]
+    "Ruby/Rails"
   end
 
   def default_process_types
