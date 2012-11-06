@@ -7,7 +7,7 @@ module LanguagePack
   # @param [Array] first argument is a String of the build directory
   # @return [LanguagePack] the {LanguagePack} detected
   def self.detect(*args)
-    Dir.chdir(args.first)
+    Dir.chdir(args.first+"/#{ENV['APP_NAME']}")
 
     pack = [ Rails3, Rails2, Rack, Ruby ].detect do |klass|
       klass.use?
