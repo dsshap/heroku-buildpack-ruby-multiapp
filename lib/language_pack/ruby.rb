@@ -182,6 +182,8 @@ private
   def setup_language_pack_environment
     setup_ruby_install_env
 
+    puts "after setup_ruby_install_env"
+
     config_vars = default_config_vars.each do |key, value|
       ENV[key] ||= value
     end
