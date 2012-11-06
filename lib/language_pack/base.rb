@@ -65,9 +65,8 @@ class LanguagePack::Base
     setup_language_pack_environment
 
     {
-      "addons" => default_addons
-      #,
-      # "config_vars" => default_config_vars,
+      # "addons" => default_addons,
+      "config_vars" => default_config_vars#,
       # "default_process_types" => default_process_types
     }.to_yaml
   end
