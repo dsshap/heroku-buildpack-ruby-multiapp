@@ -4,8 +4,10 @@ cat << EOF
 ---
 addons:
 config_vars:
-  "LANG"     => "en_US.UTF-8",
-  "PATH"     => default_path,
-  "GEM_PATH" => slug_vendor_base,
+  RACK_ENV: production
+  RAILS_ENV: production
 default_process_types:
+  web: bundle exec rails server -p $PORT 
+  rake: bundle exec rake
+  console: bundle exec rails console
 EOF
