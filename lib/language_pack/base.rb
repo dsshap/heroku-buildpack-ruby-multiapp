@@ -64,12 +64,6 @@ class LanguagePack::Base
   def release
     setup_language_pack_environment
 
-    $stderr.puts  "in release"
-    $stderr.puts  "addons: #{default_addons}"
-    $stderr.puts  "config_vars: #{default_config_vars}"
-    $stderr.puts  "default_process_types: #{default_process_types}"
-    $stdout.flush
-
     {
       "addons" => default_addons,
       "config_vars" => default_config_vars,

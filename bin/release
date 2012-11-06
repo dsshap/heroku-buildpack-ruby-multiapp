@@ -1,9 +1,11 @@
-#!/usr/bin/env ruby
+#!/bin/sh
 
-$:.unshift File.expand_path("../../lib", __FILE__)
-require "language_pack"
-
-if pack = LanguagePack.detect(ARGV[0], ARGV[1])
-  puts pack.release
-end
-
+cat << EOF
+---
+addons:
+config_vars:
+  "LANG"     => "en_US.UTF-8",
+  "PATH"     => default_path,
+  "GEM_PATH" => slug_vendor_base,
+default_process_types:
+EOF
