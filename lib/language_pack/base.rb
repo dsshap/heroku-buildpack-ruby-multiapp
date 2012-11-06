@@ -62,6 +62,8 @@ class LanguagePack::Base
   # collection of values passed for a release
   # @return [String] in YAML format of the result
   def release
+    puts "in release"
+
     setup_language_pack_environment
 
     puts "before yml"
