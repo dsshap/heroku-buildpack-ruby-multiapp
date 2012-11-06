@@ -4,7 +4,11 @@
 $stdout.sync = true
 
 $:.unshift File.expand_path("../../lib", __FILE__)
-require "language_pack"
+# require "language_pack"
+require "language_pack/ruby"
+require "language_pack/rack"
+require "language_pack/rails2"
+require "language_pack/rails3"
 
 pack = Rails3
 
