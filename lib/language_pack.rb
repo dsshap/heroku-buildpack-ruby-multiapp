@@ -9,9 +9,10 @@ module LanguagePack
   def self.detect(*args)
     Dir.chdir(args.first+"/app1" )
 
-    pack = [ Rails3 ].detect do |klass|
-      klass.use?
-    end
+    pack = Rails3 
+    # [ Rails3 ].detect do |klass|
+    #   klass.use?
+    # end
 
     pack ? pack.new(*args) : nil
   end
