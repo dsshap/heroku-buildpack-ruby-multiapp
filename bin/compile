@@ -4,11 +4,7 @@
 $stdout.sync = true
 
 $:.unshift File.expand_path("../../lib", __FILE__)
-
-require "pathname"
-require "language_pack/ruby"
-require "language_pack/rails2"
-require "language_pack/rails3"
+require "language_pack"
 
 pack = Rails3.new(ARGV[0], ARGV[1])
 
