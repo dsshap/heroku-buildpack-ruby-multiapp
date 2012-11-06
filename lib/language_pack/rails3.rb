@@ -22,10 +22,10 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
                     "bundle exec rails server -p $PORT"
 
     super.merge({
-      "web" => web_process,
+      "web" => "bundle exec thin start -p $PORT -e $RACK_ENV",
       "console" => "bundle exec rails console"
     })
-    puts "r3 gem_is_bundled?(thin): #{gem_is_bundled?("thin")}"
+
   end
 
 private
