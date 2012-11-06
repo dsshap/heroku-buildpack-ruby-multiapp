@@ -18,8 +18,6 @@ class LanguagePack::Ruby < LanguagePack::Base
   # detects if this is a valid Ruby app
   # @return [Boolean] true if it's a Ruby app
   def self.use?
-    log "APP_NAME: #{ENV["APP_NAME"]}"
-    puts "APP_NAME: #{ENV["APP_NAME"]}"
     File.exist?("Gemfile")
   end
 
