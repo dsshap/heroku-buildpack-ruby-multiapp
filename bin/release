@@ -6,9 +6,6 @@ addons:
 config_vars:
   RACK_ENV: production
   RAILS_ENV: production
-  PATH: bin:vendor/bundle/ruby/1.9.1/bin:/usr/local/bin:/usr/bin:/bin
-  LANG: en_US.UTF-8
-  GEM_PATH: vendor/bundle/ruby/1.9.1
 default_process_types:
   web: bundle exec thin start -R config.ru -e $RAILS_ENV -p $PORT
   rake: bundle exec rake

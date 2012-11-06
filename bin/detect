@@ -3,6 +3,7 @@
 $:.unshift File.expand_path("../../lib", __FILE__)
 require "language_pack"
 
+puts "multi"
 exit 0
 
 # if pack = LanguagePack.detect(ARGV.first)
