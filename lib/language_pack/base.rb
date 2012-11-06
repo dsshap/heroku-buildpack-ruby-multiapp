@@ -64,10 +64,12 @@ class LanguagePack::Base
   def release
     setup_language_pack_environment
 
+    Kernel.puts "in release"
+
     {
-      # "addons" => default_addons,
-      "config_vars" => default_config_vars#,
-      # "default_process_types" => default_process_types
+      "addons" => default_addons,
+      "config_vars" => default_config_vars,
+      "default_process_types" => default_process_types
     }.to_yaml
   end
 
