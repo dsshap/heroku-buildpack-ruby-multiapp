@@ -180,12 +180,19 @@ private
 
   # sets up the environment variables for the build process
   def setup_language_pack_environment
+    puts "before setup_ruby_install_env"
     setup_ruby_install_env
+
+    puts "before config_vars"
 
     config_vars = default_config_vars.each do |key, value|
       ENV[key] ||= value
     end
+
+    puts "before ENV GEM_HOME"
     ENV["GEM_HOME"] = slug_vendor_base
+
+    puts "before ENV PATH"
     ENV["PATH"]     = "#{ruby_install_binstub_path}:#{config_vars["PATH"]}"
   end
 
