@@ -23,7 +23,6 @@ class LanguagePack::Rails2 < LanguagePack::Ruby
   end
 
   def default_process_types
-    puts "r2 gem_is_bundled?(thin): #{gem_is_bundled?("thin")}"
     web_process = gem_is_bundled?("thin") ?
                     "bundle exec thin start -e $RAILS_ENV -p $PORT" :
                     "bundle exec ruby script/server -p $PORT"
@@ -33,6 +32,7 @@ class LanguagePack::Rails2 < LanguagePack::Ruby
       "worker" => "bundle exec rake jobs:work",
       "console" => "bundle exec script/console"
     })
+    puts "r2 gem_is_bundled?(thin): #{gem_is_bundled?("thin")}"
   end
 
   def compile

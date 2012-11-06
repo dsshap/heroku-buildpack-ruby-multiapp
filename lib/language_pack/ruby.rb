@@ -40,7 +40,6 @@ class LanguagePack::Ruby < LanguagePack::Base
   end
 
   def default_process_types
-    puts "ruby default_process_types"
     {
       "rake"    => "bundle exec rake",
       "console" => "bundle exec irb"

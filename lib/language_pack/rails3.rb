@@ -17,7 +17,6 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
 
   def default_process_types
     # let's special case thin here
-    puts "r3 gem_is_bundled?(thin): #{gem_is_bundled?("thin")}"
     web_process = gem_is_bundled?("thin") ?
                     "bundle exec thin start -R config.ru -e $RAILS_ENV -p $PORT" :
                     "bundle exec rails server -p $PORT"
@@ -26,6 +25,7 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
       "web" => web_process,
       "console" => "bundle exec rails console"
     })
+    puts "r3 gem_is_bundled?(thin): #{gem_is_bundled?("thin")}"
   end
 
 private
