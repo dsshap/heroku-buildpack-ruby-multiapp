@@ -17,9 +17,9 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
 
   def default_process_types
     # let's special case thin here
-    web_process = gem_is_bundled?("thin") ?
+    web_process = (gem_is_bundled?("thin") ?
                     "bundle exec thin start -R app1/config.ru -e $RAILS_ENV -p $PORT" :
-                    "bundle exec rails server -p $PORT"
+                    "bundle exec rails server -p $PORT")
 
     puts "r3 default_process_types: #{web_process}"
     super.merge({
