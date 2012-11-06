@@ -32,7 +32,6 @@ class LanguagePack::Rails2 < LanguagePack::Ruby
       "worker" => "bundle exec rake jobs:work",
       "console" => "bundle exec script/console"
     })
-    puts "r2 default_process_types: #{web_process}"
   end
 
   def compile
