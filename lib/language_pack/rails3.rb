@@ -9,13 +9,10 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
     super &&
       File.exists?("config/application.rb") &&
       File.read("config/application.rb") =~ /Rails::Application/
-
-    log "APP_NAME: #{ENV["APP_NAME"]}"
-    puts "APP_NAME: #{ENV["APP_NAME"]}"
   end
 
   def name
-    "Ruby/Rails"
+    "Ruby/Rails $APP_NAME"
   end
 
   def default_process_types
