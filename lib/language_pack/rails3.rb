@@ -21,10 +21,13 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
                     "bundle exec thin start -R app1/config.ru -e $RAILS_ENV -p $PORT" :
                     "bundle exec rails server -p $PORT"
 
+    puts "r3 default_process_types: #{web_process}"
     super.merge({
       "web" => web_process,
       "console" => "bundle exec rails console"
     })
+    puts "r3 default_process_types: #{web_process}"
+
   end
 
 private
