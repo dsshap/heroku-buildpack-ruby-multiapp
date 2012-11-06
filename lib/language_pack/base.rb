@@ -62,11 +62,11 @@ class LanguagePack::Base
   # collection of values passed for a release
   # @return [String] in YAML format of the result
   def release
-    log "in release"
+    echo "in release"
 
     setup_language_pack_environment
 
-    log "before yml"
+    echo "before yml"
 
     yml = {
       "addons" => default_addons,
@@ -74,7 +74,7 @@ class LanguagePack::Base
       "default_process_types" => default_process_types
     }.to_yaml
 
-    log "yaml", :yml="#{yml}"
+    echo "yaml: #{yml}"
 
     yml
   end
