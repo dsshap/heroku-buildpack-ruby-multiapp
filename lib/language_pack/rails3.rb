@@ -25,8 +25,6 @@ class LanguagePack::Rails3 < LanguagePack::Rails2
       "web" => web_process,
       "console" => "bundle exec rails console"
     })
-    puts "r3 default_process_types: #{web_process}"
-
   end
 
 private
