@@ -23,12 +23,12 @@ class LanguagePack::Rails2 < LanguagePack::Ruby
   end
 
   def default_process_types
-    # web_process = gem_is_bundled?("thin") ?
-    #                 "bundle exec thin start -e $RAILS_ENV -p $PORT" :
-    #                 "bundle exec ruby script/server -p $PORT"
+    web_process = gem_is_bundled?("thin") ?
+                    "bundle exec thin start -e $RAILS_ENV -p $PORT" :
+                    "bundle exec ruby script/server -p $PORT"
 
     super.merge({
-      # "web" => web_process,
+      "web" => web_process,
       "worker" => "bundle exec rake jobs:work",
       "console" => "bundle exec script/console"
     })
