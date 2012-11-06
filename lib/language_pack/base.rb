@@ -16,7 +16,7 @@ class LanguagePack::Base
   # @param [String] the path of the cache dir
   def initialize(build_path, cache_path=nil)
 
-    build_path = "#{build_path}/#{ENV['APP_NAME']}"
+    build_path = "#{build_path}/#{ENV['BUILD_DIR']}"
     
     @build_path = build_path
     puts "@build_path: #{@build_path}"
