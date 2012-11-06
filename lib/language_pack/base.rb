@@ -15,6 +15,7 @@ class LanguagePack::Base
   # @param [String] the path of the build dir
   # @param [String] the path of the cache dir
   def initialize(build_path, cache_path=nil)
+    puts "name1: "+ ENV['APP_NAME'].to_s
     @build_path = build_path
     @cache_path = cache_path
     @id = Digest::SHA1.hexdigest("#{Time.now.to_f}-#{rand(1000000)}")[0..10]
