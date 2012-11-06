@@ -18,7 +18,6 @@ class LanguagePack::Ruby < LanguagePack::Base
   # detects if this is a valid Ruby app
   # @return [Boolean] true if it's a Ruby app
   def self.use?
-    puts "name2: "+ ENV['APP_NAME'].to_s
     File.exist?("Gemfile")
   end
 
@@ -533,7 +532,7 @@ params = CGI.parse(uri.query || "")
   def lockfile_parser
     add_bundler_to_load_path
     require "bundler"
-    @lockfile_parser ||= Bundler::LockfileParser.new(File.read("Gemfile.lock"))
+    @lockfile_parser ||= Bundler::LockfileParser.new(File.read("#{ENV['APP_NAME']}/Gemfile.lock"))
   end
 
   # detects if a rake task is defined in the app
