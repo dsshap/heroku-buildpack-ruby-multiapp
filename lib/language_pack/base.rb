@@ -65,6 +65,7 @@ class LanguagePack::Base
     setup_language_pack_environment
 
     Kernel.puts "in release"
+    $stdout.flush
 
     {
       "addons" => default_addons,
