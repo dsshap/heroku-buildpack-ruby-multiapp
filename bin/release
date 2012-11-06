@@ -6,6 +6,7 @@ require "language_pack"
 if pack = LanguagePack.detect(ARGV[0], ARGV[1])
   Kernel.puts "about to be in release"
   $stdout.flush
+  puts "about to be in release 2"
   puts pack.release
 end
 
