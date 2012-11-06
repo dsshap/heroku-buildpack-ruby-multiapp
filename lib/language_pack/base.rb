@@ -64,6 +64,8 @@ class LanguagePack::Base
   def release
     setup_language_pack_environment
 
+    puts "setup_language_pack_environment passed"
+
     {
       "addons" => default_addons,
       "config_vars" => default_config_vars,
