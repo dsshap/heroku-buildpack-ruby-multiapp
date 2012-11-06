@@ -1,21 +1,11 @@
 
-# #!/bin/sh
 
-# cat <<EOF
-# ---
-# default_process_types:
-#   web: bundle exec thin start -p $PORT -e $RACK_ENV
-# EOF
 
 #!/usr/bin/env ruby
 $:.unshift File.expand_path("../../lib", __FILE__)
 require "language_pack"
 
 if pack = LanguagePack.detect(ARGV[0], ARGV[1])
-
-  
-  $stderr.puts  "about to be in release 2"
-  $stdout.flush
   puts pack.release
 end
 
