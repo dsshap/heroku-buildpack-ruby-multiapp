@@ -13,7 +13,7 @@ Example Usage:
     === multiapp-app1 Config Vars
       BUILDPACK_URL:  https://github.com/dsshap/heroku-buildpack-ruby-multiapp.git
       BUILD_DIR:      app1
-      BUNDLE_GEMFILE: /app/app1/Gemfile
+      BUNDLE_GEMFILE: /app/app1/Gemfile               *Dont set this until after the slug has been compiled*
       GEM_PATH:       app1/vendor/bundle/ruby/1.9.1
       LANG:           en_US.UTF-8
       PATH:           bin:app1/vendor/bundle/ruby/1.9.1/bin:/usr/local/bin:/usr/bin:/bin
