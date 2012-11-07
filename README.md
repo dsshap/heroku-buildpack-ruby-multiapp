@@ -20,6 +20,10 @@ Example Usage:
       RACK_ENV:       production
       RAILS_ENV:      production
 
+Procfile
+    
+    web: bundle exec thin start -R $BUILD_DIR/config.ru -p $PORT -e $RACK_ENV 
+
 ### Ruby
 
 Example Usage:
@@ -32,18 +36,20 @@ Example Usage:
     $ git push heroku master
     ...
     -----> Heroku receiving push
-    -----> Fetching custom buildpack
-    -----> Ruby app detected
-    -----> Installing dependencies using Bundler version 1.1.rc
-           Running: bundle install --without development:test --path vendor/bundle --deployment
-           Fetching gem metadata from http://rubygems.org/..
-           Installing rack (1.3.5)
-           Using bundler (1.1.rc)
+    -----> Fetching custom git buildpack... done
+    -----> multi app detected
+           @build_path: /tmp/build_2vvd5w39yvspj/app1
+    -----> Installing dependencies using Bundler version 1.2.1
+           Running: bundle install --without development:test --path vendor/bundle --binstubs bin/ --deployment
+           Installing rake (0.9.2.2)
+           Using bundler (1.2.1)
            Your bundle is complete! It was installed into ./vendor/bundle
            Cleaning up the bundler cache.
     -----> Discovering process types
-           Procfile declares types -> (none)
-           Default types for Ruby  -> console, rake
+           Procfile declares types -> web
+           Default types for multi -> console, rake
+
+
 
 The buildpack will detect your app as Ruby if it has a `Gemfile` and `Gemfile.lock` files in the root directory. It will then proceed to run `bundle install` after setting up the appropriate environment for [ruby](http://ruby-lang.org) and [Bundler](http://gembundler.com).
 
