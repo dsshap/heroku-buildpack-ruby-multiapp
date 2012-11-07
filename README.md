@@ -1,7 +1,10 @@
-Heroku buildpack: Ruby
+Heroku buildpack: Multiple apps in one repo
 ======================
 
-This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for Ruby, Rack, and Rails apps. It uses [Bundler](http://gembundler.com) for dependency management.
+This buildpack allows you to have two applications in one repo, but only having one application compiled and run on the heroku server at a time. 
+
+This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for Ruby Rails3 apps. It uses [Bundler](http://gembundler.com) for dependency management.
+
 
 Usage
 -----
